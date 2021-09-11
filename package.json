@@ -1,0 +1,19 @@
+{
+  "name": "launchpad",
+  "version": "1.0.0",
+  "description": "Launchpad - A starter kit for front end developers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmoncado/launchpad.git"
+  },
+  "author": "Derick Moncado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmoncado/launchpad/issues"
+  },
+  "homepage": "https://github.com/dmoncado/launchpad#readme"
+}
