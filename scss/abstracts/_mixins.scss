@@ -1,0 +1,17 @@
+/* Mixins */
+
+// Red Button
+@mixin btn-red {
+  margin: 0;
+  padding: 20px;
+  background-color: red;
+  color: #fff;
+  border-radius: 5px;
+}
+
+// Something Else
+@mixin something-else($bg) {
+  margin: 0;
+  padding: 20px;
+  background-color: $bg;
+}
