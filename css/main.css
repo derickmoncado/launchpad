@@ -2,5 +2,13 @@
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 /* Variables */
 /* Mixins */
+/* Global Styles */
+.someclass {
+  border-radius: 5px;
+}
+
+/* Typography */
+/* Header Styles */
+/* Footer Styles */
 
 /*# sourceMappingURL=main.css.map */
