@@ -15,3 +15,15 @@
 // Layout
 @import 'layout/header';
 @import 'layout/footer';
+
+// Components
+@import 'components/buttons';
+@import 'components/carousel';
+
+// Pages
+@import 'pages/home';
+@import 'pages/contact';
+
+// Themes
+@import 'theme/admin';
+@import 'theme/theme';
