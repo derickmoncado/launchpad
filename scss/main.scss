@@ -8,6 +8,10 @@
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 
+// Vendors
+@import 'vendors/slick'; 
+@import 'vendors/animate';
+
 // Base
 @import 'base/globals';
 @import 'base/typography';
