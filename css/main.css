@@ -261,6 +261,13 @@ header {
 }
 
 /* Footer Styles */
+footer {
+  background: #efefef;
+}
+footer p {
+  margin: 0;
+}
+
 /* Button Styles */
 /* Carousel Styles */
 .home-carousel-example {
@@ -269,6 +276,10 @@ header {
 }
 
 /* Home Page */
+.home-body-example {
+  padding: 150px 0;
+}
+
 /* Contact Page */
 /* Admin Theme */
 /* Some Theme */
