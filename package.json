@@ -4,7 +4,7 @@
   "description": "Launchpad - A starter kit for front end developers",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch scss/:css/"
+    "sass": "sass --watch src/assets/scss/:css/"
   },
   "repository": {
     "type": "git",
