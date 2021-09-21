@@ -17,11 +17,16 @@
   },
   "homepage": "https://github.com/dmoncado/launchpad#readme",
   "dependencies": {
+    "autoprefixer": "^10.3.4",
     "bootstrap": "^5.1.1",
     "bootstrap-icons": "^1.5.0",
+    "gulp-sourcemaps": "^3.0.0",
     "node-sass": "^6.0.1"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.41.1"
   }
 }
