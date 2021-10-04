@@ -1,8 +1,9 @@
 'use strict';
 const {src, dest, watch, series } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const sourcemaps = require('gulp-sourcemaps');
+const sass          = require('gulp-sass')(require('sass'));
+const sourcemaps    = require('gulp-sourcemaps');
 const autoprefixer  = require('gulp-autoprefixer');
+const browserSync   = require('browser-sync').create();
 
 
 // compile SCSS into CSS
@@ -16,8 +17,18 @@ function compileSCSS() {
 	}).on('error', sass.logError))
 	.pipe(autoprefixer('last 2 versions'))
 	.pipe(sourcemaps.write())
-	.pipe(dest('css'));
-	//.pipe(browserSync.stream());
+	.pipe(dest('css'))
+	.pipe(browserSync.stream());
+}
+
+// browserSync
+function browserSyncInit(done) {
+  console.log('----BROWSER SYNC----');
+  browserSync.init({
+	notify: false,
+	server: './'
+  });
+  return done();
 }
 
 // watch files
@@ -27,4 +38,4 @@ function watchFiles() {
 }
 
 // gulp dev
-exports.dev = series(compileSCSS, watchFiles);
+exports.dev = series(compileSCSS, browserSyncInit, watchFiles);
