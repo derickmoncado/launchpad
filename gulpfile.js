@@ -36,7 +36,7 @@ function compileHTML() {
 	.pipe(browserSync.stream());
 }
 
-// RESET PANINI'S CACHE OF LAYOUTS AND PARTIALS
+// resets Panini's cache of layouts and partials
 function resetPages(done) {
   console.log('----CLEARING PANINI CACHE----');
   panini.refresh();
@@ -57,7 +57,7 @@ function browserSyncInit(done) {
 function watchFiles() {
   watch('src/**/*.html', compileHTML);
   watch(['src/assets/scss/**/*.scss', 'src/assets/scss/*.scss'], compileSCSS);
-  // watch('src/assets/js/*.js', compileJS); let not worry about this yet
+  // watch('src/assets/js/*.js', compileJS); lets not worry about this yet
 }
 
 // gulp dev
