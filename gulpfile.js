@@ -5,6 +5,7 @@ const sourcemaps    = require('gulp-sourcemaps');
 const autoprefixer  = require('gulp-autoprefixer');
 const browserSync   = require('browser-sync').create();
 const panini        = require('panini');
+const babel         = require('gulp-babel');
 
 
 // compile SCSS into CSS
@@ -36,6 +37,15 @@ function compileHTML() {
 	.pipe(browserSync.stream());
 }
 
+// compile JS
+function compileJS() {
+  console.log('----COMPILE CUSTOM.JS----');
+  return src(['src/assets/js/custom.js'])
+	.pipe(babel())
+	.pipe(dest('dist/assets/js/'))
+	.pipe(browserSync.stream());
+}
+
 // resets Panini's cache of layouts and partials
 function resetPages(done) {
   console.log('----CLEARING PANINI CACHE----');
@@ -57,8 +67,8 @@ function browserSyncInit(done) {
 function watchFiles() {
   watch('src/**/*.html', compileHTML);
   watch(['src/assets/scss/**/*.scss', 'src/assets/scss/*.scss'], compileSCSS);
-  // watch('src/assets/js/*.js', compileJS); lets not worry about this yet
+  watch(['src/assets/js/**/*.js', 'src/assets/js/*.js'], compileJS);
 }
 
 // gulp dev
-exports.dev = series(compileHTML, resetPages, compileSCSS, browserSyncInit, watchFiles);
+exports.dev = series(compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
