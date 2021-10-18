@@ -39,10 +39,10 @@ function compileHTML() {
 
 // compile JS
 function compileJS() {
-  console.log('----COMPILE CUSTOM.JS----');
-  return src(['src/assets/js/custom.js'])
+  console.log('----COMPILE JS----');
+  return src('src/assets/js/**/*.js')
 	.pipe(babel())
-	.pipe(dest('dist/assets/js/'))
+	.pipe(dest('dist/assets/js'))
 	.pipe(browserSync.stream());
 }
 
