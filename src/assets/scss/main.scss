@@ -1,8 +1,7 @@
 @charset 'UTF-8';
 
 // Bootstrap + Icons
-@import "../node_modules/bootstrap/dist/css/bootstrap.css"; // Bootstrap
-@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css"; // Bootstrap Icons
+@import 'vendors/bootstrap';
 
 // Abstracts
 @import 'abstracts/variables';
@@ -10,7 +9,7 @@
 
 // Vendors
 @import 'vendors/slick';
-@import 'vendors/slick-theme'; 
+@import 'vendors/slick-theme';
 @import 'vendors/animate';
 
 // Base
