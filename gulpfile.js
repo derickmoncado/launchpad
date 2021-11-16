@@ -63,12 +63,23 @@ function browserSyncInit(done) {
   return done();
 }
 
+// copy and minify images to dist
+function copyImages() {
+  console.log('----COMPILING IMAGES----');
+  return src('src/assets/images/**/*.+(png|jpg|jpeg|gif|svg)')
+	//.pipe(newer('dist/assets/images/'))
+	//.pipe(imagemin())
+	.pipe(dest('dist/assets/images/'))
+	.pipe(browserSync.stream());
+}
+
 // watch files
 function watchFiles() {
   watch('src/**/*.html', compileHTML);
   watch(['src/assets/scss/**/*.scss', 'src/assets/scss/*.scss'], compileSCSS);
   watch(['src/assets/js/**/*.js', 'src/assets/js/*.js'], compileJS);
+  watch('src/assets/images/**/*', copyImages);
 }
 
 // gulp dev
-exports.dev = series(compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
+exports.dev = series(copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
