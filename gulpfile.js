@@ -73,6 +73,9 @@ function copyImages() {
 	.pipe(browserSync.stream());
 }
 
+// TODO
+// add font compiling to get boostrap icons (and do the slick one's too)
+
 // watch files
 function watchFiles() {
   watch('src/**/*.html', compileHTML);
