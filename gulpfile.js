@@ -73,8 +73,15 @@ function copyImages() {
 	.pipe(browserSync.stream());
 }
 
-// TODO
-// add font compiling to get boostrap icons (and do the slick one's too)
+// places font files in dist
+function copyFont() {
+  console.log('----COPYING FONTS INTO DIST FOLDER----');
+  return src([
+	  'src/assets/fonts/*',
+	])
+	.pipe(dest('dist/assets/fonts'))
+	.pipe(browserSync.stream());
+}
 
 // watch files
 function watchFiles() {
@@ -85,4 +92,4 @@ function watchFiles() {
 }
 
 // gulp dev
-exports.dev = series(copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
+exports.dev = series(copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
