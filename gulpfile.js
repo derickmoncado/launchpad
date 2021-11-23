@@ -67,8 +67,6 @@ function browserSyncInit(done) {
 function copyImages() {
   console.log('----COMPILING IMAGES----');
   return src('src/assets/images/**/*.+(png|jpg|jpeg|gif|svg)')
-	//.pipe(newer('dist/assets/images/'))
-	//.pipe(imagemin())
 	.pipe(dest('dist/assets/images/'))
 	.pipe(browserSync.stream());
 }
