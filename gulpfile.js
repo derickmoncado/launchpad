@@ -6,6 +6,7 @@ const autoprefixer  = require('gulp-autoprefixer');
 const browserSync   = require('browser-sync').create();
 const panini        = require('panini');
 const babel         = require('gulp-babel');
+const del           = require('del');
 
 
 // compile SCSS into CSS
@@ -81,6 +82,13 @@ function copyFont() {
 	.pipe(browserSync.stream());
 }
 
+// deletes dist folder
+function cleanDist(done) {
+  console.log('----REMOVING OLD FILES FROM DIST----');
+  del.sync('dist');
+  return done();
+}
+
 // watch files
 function watchFiles() {
   watch('src/**/*.html', compileHTML);
@@ -89,12 +97,5 @@ function watchFiles() {
   watch('src/assets/images/**/*', copyImages);
 }
 
-// deletes dist folder
-function cleanDist(done) {
-  console.log('----REMOVING OLD FILES FROM DIST----');
-  del.sync('dist');
-  return done();
-}
-
-// gulp dev
-exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, compileSCSS, resetPages, browserSyncInit, watchFiles);
+// TASK: gulp dev
+exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
