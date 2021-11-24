@@ -89,5 +89,12 @@ function watchFiles() {
   watch('src/assets/images/**/*', copyImages);
 }
 
+// deletes dist folder
+function cleanDist(done) {
+  console.log('----REMOVING OLD FILES FROM DIST----');
+  del.sync('dist');
+  return done();
+}
+
 // gulp dev
-exports.dev = series(copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
+exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, compileSCSS, resetPages, browserSyncInit, watchFiles);
