@@ -2,6 +2,9 @@
 
 // Home Carousel
 .home-carousel-example {
-  padding: 80px 0;
   border-bottom: 2px solid #efefef;
+
+  .swiper {
+    padding: 50px 0;
+  }
 }
