@@ -2,4 +2,12 @@
 
 footer {
   background: #efefef;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &[data-emergence="visible"] {
+    background: red;
+  }
 }

@@ -23,4 +23,7 @@
 			el: '.swiper-scrollbar',
 		},
 	});
+
+	// Init Emergence
+	emergence.init();
 })();
