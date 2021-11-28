@@ -1,6 +1,6 @@
 'use strict';
 
-const init = () => {
+(function () {
 	console.log('document ready!');
 
 	// Appends the 'active' class to nav links
@@ -8,8 +8,8 @@ const init = () => {
 	document.querySelectorAll(`.navbar-nav > li > a[href='${pathname}']`).forEach(el => {
 		el.classList.add('active');
 	});
-	
-	// Init Swiper
+
+  // Init Swiper
 	const swiper = new Swiper('.swiper', {
 		loop: true,
 		pagination: {
@@ -23,6 +23,4 @@ const init = () => {
 			el: '.swiper-scrollbar',
 		},
 	});
-};
-
-init();
+})();
