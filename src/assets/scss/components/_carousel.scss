@@ -5,6 +5,10 @@
   border-bottom: 2px solid #efefef;
 
   .swiper {
-    padding: 50px 0;
+    padding: 150px 0;
+
+    .swiper-slide {
+      text-align: center;
+    }
   }
 }
