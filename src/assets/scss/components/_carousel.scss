@@ -2,13 +2,17 @@
 
 // Home Carousel
 .home-carousel-example {
-  border-bottom: 2px solid #efefef;
+  height: calc(100vh - 90px);
+  border-bottom: 2px solid #e8e8e8;
 
   .swiper {
-    padding: 150px 0;
+    height: 100%;
 
     .swiper-slide {
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
