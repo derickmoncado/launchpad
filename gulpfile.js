@@ -7,6 +7,7 @@ const browserSync   = require('browser-sync').create();
 const panini        = require('panini');
 const babel         = require('gulp-babel');
 const del           = require('del');
+const concat        = require('gulp-concat');
 
 
 /* ---------------------------------------------------
