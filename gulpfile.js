@@ -9,6 +9,10 @@ const babel         = require('gulp-babel');
 const del           = require('del');
 
 
+/* ---------------------------------------------------
+	Dev tasks
+--------------------------------------------------- */
+
 // compile SCSS into CSS
 function compileSCSS() {
   console.log('----COMPILING SCSS!----');
@@ -97,5 +101,42 @@ function watchFiles() {
   watch('src/assets/images/**/*', copyImages);
 }
 
+
+/* ---------------------------------------------------
+	Prod tasks
+--------------------------------------------------- */
+
+// change to minified versions of js and css
+// function renameSources() {
+//   console.log('----RENAMING SOURCES----');
+//   return src('dist/*.html')
+// 	.pipe(htmlreplace({
+// 	  'js': 'assets/js/main.min.js',
+// 	  'css': 'assets/css/main.min.css'
+// 	}))
+// 	.pipe(dest('dist/'));
+// }
+
+// concatenate all js files
+function concatScripts() {
+  console.log('----CONCATINATE SCRIPTS----');
+  return src([
+	  'src/assets/js/vendor/bootstrap.bundle.js',
+	  'src/assets/js/vendor/emergence.js',
+		'src/assets/js/vendor/swiper-bundle.js',
+	  'src/assets/js/*'
+	])
+	.pipe(sourcemaps.init())
+	.pipe(concat('main.js'))
+	.pipe(sourcemaps.write('./'))
+	.pipe(dest('dist/assets/js'))
+	.pipe(browserSync.stream());
+}
+
+
 // TASK: gulp dev
 exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
+
+// TASK: gulp prod
+exports.prod = series(cleanDist, copyFont, copyImages, concatScripts, compileHTML, browserSyncInit);
+// tasks needed---- concatScripts, minifyScripts, minifyCss, renameSources  
