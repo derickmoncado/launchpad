@@ -135,9 +135,11 @@ function concatScripts() {
 }
 
 
+
+
 // TASK: gulp dev
 exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
 
 // TASK: gulp prod
-exports.prod = series(cleanDist, copyFont, copyImages, concatScripts, compileHTML, browserSyncInit);
-// tasks needed---- concatScripts, minifyScripts, minifyCss, renameSources  
+exports.prod = series(cleanDist, copyFont, copyImages, concatScripts, minifyScripts, compileHTML, browserSyncInit);
+// tasks needed---- minifyScripts, minifyCss, renameSources  
