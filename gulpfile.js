@@ -8,6 +8,9 @@ const panini        = require('panini');
 const babel         = require('gulp-babel');
 const del           = require('del');
 const concat        = require('gulp-concat');
+const removeCode    = require('gulp-remove-code');
+const uglify        = require('gulp-uglify-es').default;
+const rename        = require('gulp-rename');
 
 
 /* ---------------------------------------------------
@@ -108,15 +111,15 @@ function watchFiles() {
 --------------------------------------------------- */
 
 // change to minified versions of js and css
-// function renameSources() {
-//   console.log('----RENAMING SOURCES----');
-//   return src('dist/*.html')
-// 	.pipe(htmlreplace({
-// 	  'js': 'assets/js/main.min.js',
-// 	  'css': 'assets/css/main.min.css'
-// 	}))
-// 	.pipe(dest('dist/'));
-// }
+function renameSources() {
+  console.log('----RENAMING SOURCES----');
+  return src('dist/*.html')
+	.pipe(htmlreplace({
+	  'js': 'assets/js/main.min.js',
+	  'css': 'assets/css/main.min.css'
+	}))
+	.pipe(dest('dist/'));
+}
 
 // concatenate all js files
 function concatScripts() {
@@ -134,12 +137,22 @@ function concatScripts() {
 	.pipe(browserSync.stream());
 }
 
-
+// minify scripts
+function minifyScripts() {
+  console.log('----MINIFY SCRIPTS----');
+  return src('dist/assets/js/main.js')
+	.pipe(removeCode({
+	  production: true
+	}))
+	.pipe(uglify().on('error', console.error))
+	.pipe(rename('main.min.js'))
+	.pipe(dest('dist/assets/js'));
+}
 
 
 // TASK: gulp dev
 exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
 
 // TASK: gulp prod
-exports.prod = series(cleanDist, copyFont, copyImages, concatScripts, minifyScripts, compileHTML, browserSyncInit);
-// tasks needed---- minifyScripts, minifyCss, renameSources  
+exports.prod = series(cleanDist, copyFont, copyImages, concatScripts, minifyScripts, renameSources, compileHTML, browserSyncInit);
+// tasks needed---- minifyCss, renameSources  
