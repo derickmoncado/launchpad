@@ -1,6 +1,7 @@
 'use strict';
 const {src, dest, watch, series } = require('gulp');
 const sass          = require('gulp-sass')(require('sass'));
+const cssmin        = require('gulp-cssmin');
 const sourcemaps    = require('gulp-sourcemaps');
 const autoprefixer  = require('gulp-autoprefixer');
 const browserSync   = require('browser-sync').create();
@@ -20,7 +21,7 @@ const htmlreplace   = require('gulp-html-replace');
 
 // compile SCSS into CSS
 function compileSCSS() {
-  console.log('----COMPILING SCSS!----');
+  console.log('----COMPILING SCSS!----'); 
   return src('src/assets/scss/main.scss')
 	.pipe(sass({
 	  outputStyle: 'expanded',
@@ -150,10 +151,24 @@ function minifyScripts() {
 	.pipe(dest('dist/assets/js'));
 }
 
+// minify css
+function minifyCss() {
+  console.log('----MINIFY CSS----');
+  return src([
+		'src/assets/scss/**/*.scss',
+		'src/assets/scss/main.scss'
+	])
+	.pipe(sourcemaps.init())
+	.pipe(concat('main.css'))
+	.pipe(sourcemaps.write('./'))
+	.pipe(cssmin())
+	.pipe(rename('main.min.css'))
+	.pipe(dest('dist/assets/css'));
+}
 
-// TASK: gulp dev
+
+// TASK: $ gulp dev
 exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
 
-// TASK: gulp prod
-exports.prod = series(cleanDist, copyFont, copyImages, concatScripts, minifyScripts, renameSources, compileHTML, browserSyncInit);
-// tasks needed---- minifyCss
+// TASK: $ gulp prod
+exports.prod = series(cleanDist, copyFont, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, browserSyncInit);
