@@ -143,7 +143,7 @@ function minifyScripts() {
   return src('dist/assets/js/main.js')
 	.pipe(removeCode({
 	  production: true
-	}))
+	})) 
 	.pipe(uglify().on('error', console.error))
 	.pipe(rename('main.min.js'))
 	.pipe(dest('dist/assets/js'));
@@ -155,4 +155,4 @@ exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, re
 
 // TASK: gulp prod
 exports.prod = series(cleanDist, copyFont, copyImages, concatScripts, minifyScripts, renameSources, compileHTML, browserSyncInit);
-// tasks needed---- minifyCss, renameSources  
+// tasks needed---- minifyCss
