@@ -11,6 +11,7 @@ const concat        = require('gulp-concat');
 const removeCode    = require('gulp-remove-code');
 const uglify        = require('gulp-uglify-es').default;
 const rename        = require('gulp-rename');
+const htmlreplace   = require('gulp-html-replace');
 
 
 /* ---------------------------------------------------
