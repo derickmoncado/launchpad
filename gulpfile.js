@@ -14,6 +14,8 @@ const uglify        = require('gulp-uglify-es').default;
 const rename        = require('gulp-rename');
 const htmlreplace   = require('gulp-html-replace');
 
+//const cleanCSS 			= require('gulp-clean-css');
+
 
 /* ---------------------------------------------------
 	Dev tasks
@@ -155,12 +157,10 @@ function minifyScripts() {
 function minifyCss() {
   console.log('----MINIFY CSS----');
   return src([
-		'src/assets/scss/**/*.scss',
-		'src/assets/scss/main.scss'
+	  'dist/assets/css/main.css'
 	])
 	.pipe(sourcemaps.init())
 	.pipe(concat('main.css'))
-	.pipe(sourcemaps.write('./'))
 	.pipe(cssmin())
 	.pipe(rename('main.min.css'))
 	.pipe(dest('dist/assets/css'));
@@ -171,4 +171,4 @@ function minifyCss() {
 exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
 
 // TASK: $ gulp prod
-exports.prod = series(cleanDist, copyFont, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, browserSyncInit);
+exports.prod = series(cleanDist, compileSCSS, copyFont, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, browserSyncInit);

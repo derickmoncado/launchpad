@@ -23,6 +23,7 @@
     "bootstrap-icons": "^1.7.1",
     "del": "^6.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
     "gulp-html-replace": "^1.6.2",
