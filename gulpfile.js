@@ -170,5 +170,5 @@ function minifyCss() {
 // TASK: $ gulp dev
 exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
 
-// TASK: $ gulp prod
-exports.prod = series(cleanDist, compileSCSS, copyFont, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, browserSyncInit);
+// TASK: $ gulp build
+exports.build = series(cleanDist, compileSCSS, copyFont, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, browserSyncInit);
