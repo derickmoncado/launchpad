@@ -111,19 +111,8 @@ function watchFiles() {
 
 
 /* ---------------------------------------------------
-	Prod tasks
+	Build tasks
 --------------------------------------------------- */
-
-// change to minified versions of js and css
-function renameSources() {
-  console.log('----RENAMING SOURCES----');
-  return src('dist/*.html')
-	.pipe(htmlreplace({
-	  'js': 'assets/js/main.min.js',
-	  'css': 'assets/css/main.min.css'
-	}))
-	.pipe(dest('dist/'));
-}
 
 // concatenate all js files
 function concatScripts() {
@@ -164,6 +153,17 @@ function minifyCss() {
 	.pipe(cssmin())
 	.pipe(rename('main.min.css'))
 	.pipe(dest('dist/assets/css'));
+}
+
+// change to minified versions of js and css
+function renameSources() {
+  console.log('----RENAMING SOURCES----');
+  return src('dist/*.html')
+	.pipe(htmlreplace({
+	  'js': 'assets/js/main.min.js',
+	  'css': 'assets/css/main.min.css'
+	}))
+	.pipe(dest('dist/'));
 }
 
 
