@@ -4,6 +4,14 @@
   padding: 100px 0;
 
   .how-to-use-content {
+
+    p {
+
+      span {
+        font-family: monospace;
+        color: #9b9b9b;
+      }
+    }
     
     hr {
       margin-bottom: 40px;

@@ -14,8 +14,6 @@ const uglify        = require('gulp-uglify-es').default;
 const rename        = require('gulp-rename');
 const htmlreplace   = require('gulp-html-replace');
 
-//const cleanCSS 			= require('gulp-clean-css');
-
 
 /* ---------------------------------------------------
 	Dev tasks
@@ -38,7 +36,7 @@ function compileSCSS() {
 
 // compile HTML files and partials using Panini
 function compileHTML() {
-  console.log('----COMPILING HTML WITH PANINI----');
+  console.log('----COMPILING HTML WITH PANINI!----');
   panini.refresh();
   return src('src/pages/**/*.html')
 	.pipe(panini({
@@ -52,7 +50,7 @@ function compileHTML() {
 
 // compile JS
 function compileJS() {
-  console.log('----COMPILE JS----');
+  console.log('----COMPILING JS!----');
   return src('src/assets/js/**/*.js')
 	.pipe(babel())
 	.pipe(dest('dist/assets/js'))
@@ -61,14 +59,14 @@ function compileJS() {
 
 // resets Panini's cache of layouts and partials
 function resetPages(done) {
-  console.log('----CLEARING PANINI CACHE----');
+  console.log('----CLEARING PANINI CACHE!----');
   panini.refresh();
   done();
 }
 
 // browserSync
 function browserSyncInit(done) {
-  console.log('----BROWSER SYNC----');
+  console.log('----BROWSER SYNC!----');
   browserSync.init({
 	notify: false,
 	server: './dist'
@@ -78,7 +76,7 @@ function browserSyncInit(done) {
 
 // copy and minify images to dist
 function copyImages() {
-  console.log('----COMPILING IMAGES----');
+  console.log('----COMPILING IMAGES!----');
   return src('src/assets/images/**/*.+(png|jpg|jpeg|gif|svg)')
 	.pipe(dest('dist/assets/images/'))
 	.pipe(browserSync.stream());
@@ -86,7 +84,7 @@ function copyImages() {
 
 // places font files in dist
 function copyFont() {
-  console.log('----COPYING FONTS INTO DIST FOLDER----');
+  console.log('----COPYING FONTS INTO DIST FOLDER!----');
   return src([
 	  'src/assets/fonts/*',
 	])
@@ -96,7 +94,7 @@ function copyFont() {
 
 // deletes dist folder
 function cleanDist(done) {
-  console.log('----REMOVING OLD FILES FROM DIST----');
+  console.log('----REMOVING OLD FILES FROM DIST!----');
   del.sync('dist');
   return done();
 }
@@ -116,7 +114,7 @@ function watchFiles() {
 
 // concatenate all js files
 function concatScripts() {
-  console.log('----CONCATINATE SCRIPTS----');
+  console.log('----CONCATINATING SCRIPTS!----');
   return src([
 	  'src/assets/js/vendor/bootstrap.bundle.js',
 	  'src/assets/js/vendor/emergence.js',
@@ -132,7 +130,7 @@ function concatScripts() {
 
 // minify scripts
 function minifyScripts() {
-  console.log('----MINIFY SCRIPTS----');
+  console.log('----MINIFYING SCRIPTS!----');
   return src('dist/assets/js/main.js')
 	.pipe(removeCode({
 	  production: true
@@ -144,7 +142,7 @@ function minifyScripts() {
 
 // minify css
 function minifyCss() {
-  console.log('----MINIFY CSS----');
+  console.log('----MINIFYING CSS!----');
   return src([
 	  'dist/assets/css/main.css'
 	])
@@ -157,7 +155,7 @@ function minifyCss() {
 
 // change to minified versions of js and css
 function renameSources() {
-  console.log('----RENAMING SOURCES----');
+  console.log('----RENAMING SOURCES!----');
   return src('dist/*.html')
 	.pipe(htmlreplace({
 	  'js': 'assets/js/main.min.js',
