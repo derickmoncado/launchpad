@@ -1,7 +1,6 @@
 /* How to Use Page */
 
 #how-to-use {
-  padding: 100px 0;
 
   .how-to-use-content {
 
@@ -20,9 +19,18 @@
 
   .emergence-example {
     height: 400px;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: background-color 1s ease;
+
+    p {
+      margin-bottom: 0;
+    }
 
     &[data-emergence="visible"] {
-      background-color: $blue;
+      transition: background-color 1s ease;
+      padding: 30px;
+      background-color: #000;
       color: #fff;
     }
   }
