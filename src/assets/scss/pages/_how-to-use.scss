@@ -17,4 +17,13 @@
       margin-bottom: 40px;
     }
   }
+
+  .emergence-example {
+    height: 400px;
+
+    &[data-emergence="visible"] {
+      background-color: $blue;
+      color: #fff;
+    }
+  }
 }

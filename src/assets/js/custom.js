@@ -25,7 +25,9 @@
 	});
 
 	// Init Emergence (emergence.js)
-	emergence.init();
+	emergence.init({
+		elemCushion: 0.75 // toggles class when element is 75% visible
+	});
 
 	// Init tooltips everywhere (popper.js)
 	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
