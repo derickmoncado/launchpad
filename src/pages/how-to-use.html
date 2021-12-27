@@ -24,8 +24,60 @@ Title: Some Page
       <hr>
       <h3>Examples of all the baked-in goodies</h3>
       <br>
+
       <p class="lead">Carousels</p>
-      carousel here
+      <br>
+
+      <!-- Slider -->
+      <div class="swiper border-dark">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="container text-center">
+              <h1 class="p-4">
+                Slide One
+              </h1>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="container text-center">
+              <h1 class="p-4">
+                Slide Two
+              </h1>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="container text-center">
+              <h1 class="p-4">
+                Slide Three
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Nav -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+      <br>
+      <hr>
+      <p class="lead">Tooltips (Popper.js)</p>
+      <br>
+
+      <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+        Popover on top
+      </button>
+      <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+        Popover on right
+      </button>
+      <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+        Popover on bottom
+      </button>
+      <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+        Popover on left
+      </button>
+      <button type="button" class="btn btn-secondary" data-bs-trigger="focus" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</button>
     </div>
   </div>
 </section>
