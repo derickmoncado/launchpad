@@ -1,4 +1,4 @@
-![Quantum sample home page](https://github.com/dmoncado/Quantum/blob/master/src/assets/images/quantum-home.png?raw=true)
+![Launchpad sample home page](https://github.com/dmoncado/Quantum/blob/master/src/assets/images/quantum-home.png?raw=true)
 
 # Launchpad — A Boilerplate for Front End Developers
 Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate that's focused on automated web development. It comes with Browsersync, hot reloading, carousels, animations and much more. Launchpad is also built on top of Panini for easy HTML partials and templating {{  }}
