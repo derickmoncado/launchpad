@@ -1,6 +1,6 @@
 ![Launchpad sample home page](https://github.com/dmoncado/launchpad/blob/main/src/assets/images/launchpad-home.jpg)
 
-# Launchpad — A Boilerplate for Front End Developers
+# Launchpad 🚀 — A Boilerplate for Front End Developers
 Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate that's focused on automated web development. It comes with Browsersync, hot reloading, carousels, animations and much more. Launchpad is also built on top of Panini for easy HTML partials and templating {{  }}
 
 ### Baked-in Features:
@@ -20,20 +20,17 @@ Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate that
 * Sourcemaps
 * Concatenation
 * Minification
-* Linting
-* Accessibility reports
 
 
 ### Details
 
-Launchpad's primary features:
-
-- Build on top of Bootstrap with baked-in mobile navigation.
--	Sass compilation and prefixing with Autoprefixer (using Sass 7-1 folder architecture pattern).
-- CSS minification after all SCSS is compiled.
+- Build on top of Bootstrap with included mobile navigation and Boostrap Icons.
+-	Sass compilation and prefixing with Autoprefixer (using the Sass 7-1 folder architecture pattern).
+- CSS compilation and minification.
 - JavaScript concatenation + minification.
--	Built-in BrowserSync server - this will automatically reload your page when files are changed. It also live-injects CSS changes when you save a .SCSS file. This task runs continuously and defaults to localhost.
--	HTML templates with Panini. Panini is a super simple flat file generator for use with Gulp. It compiles a series of HTML pages using a common layout. These pages can also include HTML partials (rejoice!).
+-	Built-in BrowserSync server - this will automatically refresh your page when files are changed. It also live-injects style changes a .SCSS file is saved.
+-	HTML templating with Panini. Panini is a super simple flat file generator for use with Gulp. It compiles a series of HTML pages using a common layout. These pages can also include HTML partials for better markup organization.
+-	"Build" task for shipping your project once it's complete.
 
 
 ### Requirements
@@ -59,6 +56,7 @@ To use Launchpad, you'll need:
 Primary Gulp tasks are:
 -	`gulp dev` for general development
 -	`gulp build` for production ready builds — compiles, concatenates, and minifies everything into a folder called `/dist`
+
 
 ### Folder Structure:
 
