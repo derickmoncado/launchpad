@@ -1,46 +1,44 @@
 ![Launchpad sample home page](https://github.com/dmoncado/launchpad/blob/main/src/assets/images/launchpad-home.jpg)
 
 # Launchpad 🚀 — A Boilerplate for Front End Developers
+
 Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate that's focused on automated web development. It comes with Browsersync, hot reloading, carousels, animations and much more. Launchpad is also built on top of Panini for easy HTML partials and templating {{  }}
 
 ### Baked-in Features:
 
-* Bootstrap 5
-* Gulp 4
-* Sass
-* Swiper.js
-* Emergence.js
-* Browsersync + hot reloading
-* HTML Templating
-* Popper.js
-* Animate.css
-* Boostrap Icons
-* Compilation
-* Autoprefixing
-* Sourcemaps
-* Concatenation
-* Minification
-
+- Bootstrap 5
+- Gulp 4
+- Sass
+- Swiper.js
+- Emergence.js
+- Browsersync + hot reloading
+- HTML Templating
+- Popper.js
+- Animate.css
+- Boostrap Icons
+- Compilation
+- Autoprefixing
+- Sourcemaps
+- Concatenation
+- Minification
 
 ### Details
 
 - Build on top of Bootstrap with included mobile navigation and Boostrap Icons.
--	Sass compilation and prefixing with Autoprefixer (using the Sass 7-1 folder architecture pattern).
+- Sass compilation and prefixing with Autoprefixer (using the Sass 7-1 folder architecture pattern).
 - CSS compilation and minification.
 - JavaScript concatenation + minification.
--	Built-in BrowserSync server - this will automatically refresh your page when files are changed. It also live-injects style changes a .SCSS file is saved.
--	HTML templating with Panini. Panini is a super simple flat file generator for use with Gulp. It compiles a series of HTML pages using a common layout. These pages can also include HTML partials for better markup organization.
--	"Build" task for shipping your project once it's complete.
-
+- Built-in BrowserSync server - this will automatically refresh your page when files are changed. It also live-injects styles when a .SCSS file is saved.
+- HTML partials and templating with Panini. Panini is a super simple flat file generator for use with Gulp. It compiles a series of HTML pages using a common layout. These pages can also include HTML partials for better markup organization.
+- "Build" task for shipping your project once it's complete.
 
 ### Requirements
 
 To use Launchpad, you'll need:
 
--	Node.js | Test: run ` node -v ` in the terminal
--	npm | (Node comes with npm installed). Test: run ` npm -v`  in the terminal
--	Gulp | `npm install -g gulp`
-
+- Node.js | Test: run `node -v` in the terminal
+- npm | (Node comes with npm installed). Test: run ` npm -v` in the terminal
+- Gulp | `npm install -g gulp`
 
 ### Installing & Use:
 
@@ -54,9 +52,9 @@ To use Launchpad, you'll need:
 🚨 Changes should be committed to `src/` files only 🚨
 
 Primary Gulp tasks are:
--	`gulp dev` for general development
--	`gulp build` for production ready builds — compiles, concatenates, and minifies everything into a folder called `/dist`
 
+- `gulp dev` for general development
+- `gulp build` for production ready builds — compiles, concatenates, and minifies everything into a folder called `/dist`
 
 ### Folder Structure:
 
@@ -69,6 +67,5 @@ Primary Gulp tasks are:
 - `src/partials/` - HTML Partials
 - `gulpfile.js` - all task definitions
 - `package.json` - handles the front-end dependencies
-
 
 Happy Coding </>
