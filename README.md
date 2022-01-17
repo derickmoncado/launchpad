@@ -48,8 +48,7 @@ To use Launchpad, you'll need:
 - Run `gulp dev`
 - Your site is now viewable at: http://localhost:3000
 - Build something great (start from the HTML partials and style with the SCSS partials, go nuts.)
-
-###🚨 Changes should be committed to `src/` files only 🚨###
+### 🚨 Changes should be committed to `src/` files only 🚨
 
 Primary Gulp tasks are:
 
