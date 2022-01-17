@@ -2,7 +2,7 @@
 
 # Launchpad 🚀 — A Boilerplate for Front End Developers
 
-Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate that's focused on automated web development. It comes with Browsersync, hot reloading, carousels, animations and much more. Launchpad is also built on top of Panini for easy HTML partials and templating {{  }}
+Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate that's focused on automated web development. It comes with Browsersync, hot reloading, carousels, animations, icons, and much more. Launchpad is also built on top of Panini for easy HTML partials and templating {{  }}
 
 ### Baked-in Features:
 
@@ -25,12 +25,11 @@ Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate that
 ### Details
 
 - Build on top of Bootstrap with included mobile navigation and icons.
-- Sass compilation and prefixing with Autoprefixer (using the Sass 7-1 folder architecture pattern).
-- CSS compilation and minification.
+- Sass/CSS compilation, minification, and prefixing with Autoprefixer (using the Sass 7-1 folder architecture pattern).
 - JavaScript concatenation + minification.
-- Built-in BrowserSync server - this will automatically refresh your page when files are changed. It also live-injects styles when a .SCSS file is saved.
+- Built-in BrowserSync Server - this will automatically refresh your page when files are changed. It also live-injects styles when a .SCSS file is saved.
 - HTML partials and templating with Panini. Panini is a super simple flat file generator for use with Gulp. It compiles a series of HTML pages using a common layout. These pages can also include HTML partials for better markup organization.
-- "Build" task for shipping your project once it's complete.
+- `build` task for shipping your project once it's complete.
 
 ### Requirements
 
@@ -57,7 +56,7 @@ Primary Gulp tasks are:
 
 ### Folder Structure:
 
-- `dist/` - compiled files (minified and concatenated only with `gulp prod`)
+- `dist/` - compiled files
 - `node_modules` - front-end dependencies (.gitignore'd)
 - `src/` - contains all of your core, working files — static assets, pages, templates, etc.
 - `src/assets/` - scss files, JS files, images, and fonts
