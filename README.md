@@ -24,7 +24,7 @@ Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate that
 
 ### Details
 
-- Build on top of Bootstrap with included mobile navigation and Boostrap Icons.
+- Build on top of Bootstrap with included mobile navigation and icons.
 - Sass compilation and prefixing with Autoprefixer (using the Sass 7-1 folder architecture pattern).
 - CSS compilation and minification.
 - JavaScript concatenation + minification.
@@ -49,7 +49,7 @@ To use Launchpad, you'll need:
 - Your site is now viewable at: http://localhost:3000
 - Build something great (start from the HTML partials and style with the SCSS partials, go nuts.)
 
-🚨 Changes should be committed to `src/` files only 🚨
+###🚨 Changes should be committed to `src/` files only 🚨###
 
 Primary Gulp tasks are:
 
