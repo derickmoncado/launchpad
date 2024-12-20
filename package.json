@@ -32,7 +32,6 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^3.0.0",
-    "node-sass": "^8.0.0",
     "swiper": "^8.4.5"
   },
   "devDependencies": {
@@ -41,6 +40,6 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^5.1.0",
     "panini": "^1.7.2",
-    "sass": "^1.57.1"
+    "sass": "^1.83.0"
   }
 }
