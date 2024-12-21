@@ -1,6 +1,32 @@
 @charset 'UTF-8';
 
 // Abstracts
+@use 'abstracts/index'as *;
+
+// Vendors
+@use 'vendors/index'as *;
+
+// Base
+@use 'base/index'as *;
+
+// Layout
+@use 'layout/index'as *;
+
+// Components
+@use 'components/index'as *;
+
+// Pages
+@use 'pages/index'as *;
+
+// Themes
+@use 'theme/index'as *;
+
+
+
+// OLD way
+/* =================
+
+// Abstracts
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 
@@ -31,3 +57,5 @@
 // Themes
 @import 'theme/admin';
 @import 'theme/theme';
+
+*/
