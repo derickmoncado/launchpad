@@ -1,6 +1,6 @@
 ![Launchpad sample home page](https://github.com/dmoncado/launchpad/blob/main/src/assets/images/launchpad-home.jpg)
 
-# 2025 UPDATE DROPPING SOON!!
+# 🚨🚨🚨🚨 2025 UPDATE DROPPING SOON!! 🚨🚨🚨🚨
 
 # Launchpad 🚀 — A Boilerplate for Front End Developers
 
