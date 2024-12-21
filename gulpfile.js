@@ -1,17 +1,15 @@
 'use strict';
 const { src, dest, watch, series, parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const cssmin = require('gulp-cssmin');
-const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const panini = require('panini');
 const babel = require('gulp-babel');
 const del = require('del');
-const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
 const removeCode = require('gulp-remove-code');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
+const concat = require('gulp-concat');
+const cssmin = require('gulp-cssmin');
 const htmlreplace = require('gulp-html-replace');
 
 /* ---------------------------------------------------
@@ -116,7 +114,7 @@ function concatScripts() {
   return src([
       'src/assets/js/vendor/bootstrap.bundle.js',
       'src/assets/js/vendor/emergence.js',
-        'src/assets/js/vendor/swiper-bundle.js',
+      'src/assets/js/vendor/swiper-bundle.js',
       'src/assets/js/*'
     ])
     .pipe(sourcemaps.init())
@@ -165,12 +163,27 @@ function renameSources() {
 // TASK: $ gulp dev
 exports.dev = series(
   cleanDist,
-  parallel(copyFont, copyImages, compileHTML, compileJS),
+  copyFont, 
+  copyImages, 
   resetPages,
+  compileHTML, 
+  compileJS,
   compileSCSS,
   browserSyncInit,
   watchFiles
 );
 
 // TASK: $ gulp build
-exports.build = series(cleanDist, compileSCSS, copyFont, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, browserSyncInit);
+exports.build = series(
+  cleanDist, 
+  compileSCSS, 
+  copyFont, 
+  copyImages, 
+  resetPages,
+  compileHTML, 
+  concatScripts, 
+  minifyScripts, 
+  minifyCss, 
+  renameSources, 
+  browserSyncInit
+);
