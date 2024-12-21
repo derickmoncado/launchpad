@@ -1,5 +1,5 @@
 'use strict';
-const { src, dest, watch, series } = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const cssmin = require('gulp-cssmin');
 const sourcemaps = require('gulp-sourcemaps');
@@ -10,7 +10,7 @@ const babel = require('gulp-babel');
 const del = require('del');
 const concat = require('gulp-concat');
 const removeCode = require('gulp-remove-code');
-const uglify = require('gulp-uglify-es').default;
+const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const htmlreplace = require('gulp-html-replace');
 
@@ -42,7 +42,8 @@ function compileHTML() {
       layouts: 'src/layouts/',
       partials: 'src/partials/'
     }))
-    .pipe(dest('dist'));
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream());
 }
 
 // compile JS
@@ -50,6 +51,7 @@ function compileJS() {
   console.log('----COMPILING JS!----');
   return src('src/assets/js/**/*.js')
     .pipe(babel())
+    .pipe(sourcemaps.write('./'))
     .pipe(dest('dist/assets/js'))
     .pipe(browserSync.stream());
 }
@@ -68,7 +70,7 @@ function browserSyncInit(done) {
     notify: false,
     server: './dist'
   });
-  return done();
+  done();
 }
 
 // copy and minify images to dist
@@ -93,7 +95,7 @@ function copyFont() {
 function cleanDist(done) {
   console.log('----REMOVING OLD FILES FROM DIST!----');
   del.sync('dist');
-  return done();
+  done();
 }
 
 // watch files
@@ -161,10 +163,14 @@ function renameSources() {
 }
 
 // TASK: $ gulp dev
-exports.dev = series(cleanDist, copyFont, copyImages, compileHTML, compileJS, resetPages, compileSCSS, browserSyncInit, watchFiles);
+exports.dev = series(
+  cleanDist,
+  parallel(copyFont, copyImages, compileHTML, compileJS),
+  resetPages,
+  compileSCSS,
+  browserSyncInit,
+  watchFiles
+);
 
 // TASK: $ gulp build
 exports.build = series(cleanDist, compileSCSS, copyFont, copyImages, compileHTML, concatScripts, minifyScripts, minifyCss, renameSources, browserSyncInit);
-
-// exports.compileSCSS = compileSCSS;
-// exports.compileHTML = compileHTML;
