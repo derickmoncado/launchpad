@@ -12,7 +12,7 @@ Launchpad is also built on top of Panini for easy HTML partials and templating (
 
 ### Baked-in goodies:
 - Bootstrap 5
-- Boostrap Icons
+- Bootstrap Icons
 - Swiper.js
 - Emergence.js
 - Panini for HTML templating
