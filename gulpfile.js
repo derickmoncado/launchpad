@@ -11,6 +11,7 @@ const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const cssmin = require('gulp-cssmin');
 const htmlreplace = require('gulp-html-replace');
+const sass = require('gulp-sass')(require('sass')); // Updated to use Dart Sass
 
 /* ---------------------------------------------------
     Dev tasks
@@ -19,12 +20,11 @@ const htmlreplace = require('gulp-html-replace');
 // compile SCSS into CSS
 function compileSCSS() {
   console.log('----COMPILING SCSS!----'); 
-  return src('src/assets/scss/main.scss')
+  return src('src/assets/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded',
     }).on('error', sass.logError))
-    .pipe(autoprefixer('last 2 versions'))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/assets/css'))
     .pipe(browserSync.stream());
