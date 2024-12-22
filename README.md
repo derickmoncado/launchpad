@@ -1,7 +1,8 @@
+## 🟢 Updated for 2025
+
 ![Launchpad sample home page](https://github.com/dmoncado/launchpad/blob/main/src/assets/images/launchpad-home.jpg)
 
 # 🚀 Launchpad — A Boilerplate for Front End Developers
-## 🟢 Updated for 2025
 
 Launchpad is a Bootstrapped, Gulp-powered, Sassified, front end boilerplate for static site development and is fully focused on automation. 
 
