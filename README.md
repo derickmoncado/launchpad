@@ -31,19 +31,19 @@ Launchpad is also built on top of Panini for easy HTML partials and templating (
 
 ### Details
 
-- Build on top of Bootstrap with included mobile navigation and icons.
-- Sass/CSS compilation, minification, and prefixing with Autoprefixer (using the Sass 7-1 folder architecture pattern).
+- Built on top of Bootstrap with mobile navigation and Bootstrap Icons included.
+- SCSS compilation, minification, and prefixing with Autoprefixer (uses the Sass 7-1 folder architecture pattern).
 - JavaScript concatenation + minification.
-- Built-in BrowserSync Server - this will automatically refresh your page when files are changed. It also live-injects styles when a .SCSS file is saved.
-- HTML partials and templating with Panini. Panini is a super simple flat file generator for use with Gulp. It compiles a series of HTML pages using a common layout. These pages can also include HTML partials for better markup organization.
-- `build` task for shipping your project once it's complete.
+- Built-in BrowserSync Server - this will automatically refresh your page when you save a file. It also live-injects styles when a SCSS file is saved.
+- HTML partials and templating with Panini. Panini is a super simple flat file generator for use with Gulp. It compiles a series of HTML pages using a common layout. These pages can also include HTML partials for better markup organization. Think SCSS partials in Sass, but with HTML!
+- A `build` task for shipping your project once it's complete.
 
 ### Requirements
 
 To use Launchpad, you'll need:
 
 - Node.js | Test: run `node -v` in the terminal
-- npm | (Node comes with npm installed). Test: run ` npm -v` in the terminal
+- npm | (Node comes with npm pre-installed). Test: run ` npm -v` in the terminal
 - Gulp | `npm install -g gulp`
 
 ### Installing & Use:
@@ -52,14 +52,14 @@ To use Launchpad, you'll need:
 - Navigate into the repo directory: `cd launchpad`
 - Install all node packages: `npm install` or `sudo npm install`
 - Run `gulp dev`
-- Your site is now viewable at: http://localhost:3000
+- Your site will automatically launch at: http://localhost:3000
 - Build something dope (start from the HTML partials and style with the SCSS partials, go nuts.)
-### 🚨 Changes should be committed to `src/` files only 🚨
+### 🚨🚨🚨🚨 Changes should be committed to `src/` files only!
 
 Primary Gulp tasks are:
 
-- `gulp dev` for general development
-- `gulp build` for production ready builds — compiles, concatenates, and minifies everything into a folder called `/dist`
+- `gulp dev` for local development
+- `gulp build` for production ready builds — compiles, concatenates, and minifies everything into `/dist`
 - `/dist` contains your `index.html`, it's totally up to you how you want to serve/host that online for people to visit (I use GitHub Pages).
 
 ### Folder Structure:
@@ -74,4 +74,5 @@ Primary Gulp tasks are:
 - `gulpfile.js` - all task definitions
 - `package.json` - handles the front-end dependencies
 
-Happy Coding </>
+Happy Coding 😌 </>
+<small>Developed by [Derick Moncado](https://github.com/derickmoncado)</small>
