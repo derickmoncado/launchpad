@@ -1,21 +1,21 @@
 {
   "name": "launchpad",
   "version": "1.0.0",
-  "description": "Launchpad - A starter kit for front end developers",
+  "description": "Launchpad - A boilerplate for front end developers",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch src/assets/scss/:css/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dmoncado/launchpad.git"
+    "url": "git+https://github.com/derickmoncado/launchpad.git"
   },
   "author": "Derick Moncado",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dmoncado/launchpad/issues"
+    "url": "https://github.com/derickmoncado/launchpad/issues"
   },
-  "homepage": "https://github.com/dmoncado/launchpad#readme",
+  "homepage": "https://github.com/derickmoncado/launchpad#readme",
   "dependencies": {
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.13",
