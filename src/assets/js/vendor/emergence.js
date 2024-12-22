@@ -1,7 +1,4 @@
-/* --------------------
-  Emergence JS Library
---------------------- */
-
+/*! emergence.js v1.1.2 | (c) 2017 @xtianmiller | https://github.com/xtianmiller/emergence.js */
 (function(root, factory) {
   // AMD
   if (typeof define === 'function' && define.amd) {
